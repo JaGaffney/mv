@@ -1,0 +1,468 @@
+{
+  "hero": {
+    "duelist": {
+      "name": "duelist",
+      "set": "core",
+      "mana": 1,
+      "baseAttack": 2,
+      "baseHealth": 20,
+      "heroSkill": [],
+      "ability": [
+        {
+          "name": "riposte",
+          "bonus": 1,
+          "text": "counterattacks deal [x] extra damage"
+        }
+      ],
+      "passive": []
+    },
+    "ranger": {
+      "name": "ranger",
+      "set": "core",
+      "mana": 2,
+      "baseAttack": 1,
+      "baseHealth": 18,
+      "heroSkill": [],
+      "ability": [],
+      "passive": ["ranged"]
+    },
+    "sister": {
+      "name": "sister",
+      "set": "core",
+      "mana": 3,
+      "baseAttack": 1,
+      "baseHealth": 18,
+      "heroSkill": [
+        {
+          "name": "medic",
+          "mana": 2,
+          "bonus": 2,
+          "text": "Heal target +[x] health"
+        }
+      ],
+      "ability": [],
+      "passive": ""
+    },
+    "blacksmith": {
+      "name": "blacksmith",
+      "set": "core",
+      "mana": 2,
+      "baseAttack": 3,
+      "baseHealth": 30,
+      "heroSkill": [
+        {
+          "name": "enhance",
+          "mana": 3,
+          "bonus": 1,
+          "text": "Friendly units gain +[x] attack"
+        }
+      ],
+      "ability": [],
+      "passive": ""
+    },
+    "thief": {
+      "name": "thief",
+      "set": "core",
+      "mana": 2,
+      "baseAttack": 1,
+      "baseHealth": 26,
+      "heroSkill": [
+        {
+          "name": "draw",
+          "mana": 2,
+          "bonus": 1,
+          "text": "Draw [x] cards"
+        }
+      ],
+      "ability": [
+        {
+          "name": "haste",
+          "bonus": 2,
+          "text": "Can attack on turn it is played"
+        }
+      ],
+      "passive": ""
+    },
+    "witch": {
+      "name": "witch",
+      "set": "core",
+      "mana": 5,
+      "baseAttack": 2,
+      "baseHealth": 24,
+      "heroSkill": [
+        {
+          "name": "fireball",
+          "mana": 3,
+          "bonus": 4,
+          "text": "Deal [x] damage to target"
+        }
+      ],
+      "ability": [],
+      "passive": ""
+    },
+    "knight": {
+      "name": "knight",
+      "set": "core",
+      "mana": 4,
+      "baseAttack": 3,
+      "baseHealth": 27,
+      "heroSkill": [
+        {
+          "name": "cleave",
+          "mana": 2,
+          "bonus": 1,
+          "text": "Deal [x] damage to the front row"
+        }
+      ],
+      "ability": [
+        {
+          "name": "bloodthirst",
+          "bonus": 1,
+          "text": "Gain [x] attack for each enemey killed"
+        }
+      ],
+      "passive": ""
+    }
+  },
+  "spell": {
+    "crystal": {
+      "name:": "crystal",
+      "mana": 0,
+      "effect": {
+        "name": "ramp",
+        "bonus": 1,
+        "text": "Gain [x] mana and creature gains +[x] +[x]"
+      }
+    }
+  },
+  "creature": {
+    "earth": {
+      "rancell": {
+        "name": "rancell",
+        "set": "core",
+        "mana": 1,
+        "baseAttack": 2,
+        "baseHealth": 1,
+        "skill": [],
+        "ability": [
+          {
+            "name": "guard",
+            "bonus": 1,
+            "text": "Defend adjacent units"
+          }
+        ],
+        "passive": []
+      },
+      "arma": {
+        "name": "arma",
+        "set": "core",
+        "mana": 2,
+        "baseAttack": 1,
+        "baseHealth": 3,
+        "skill": [
+          {
+            "name": "medic",
+            "bonus": 2,
+            "text": "Heal target [x] health"
+          }
+        ],
+        "ability": [
+          {
+            "name": "haste",
+            "bonus": 1,
+            "text": "Can attack on turn it is played"
+          }
+        ],
+        "passive": []
+      },
+      "ferrion": {
+        "name": "ferrion",
+        "set": "core",
+        "mana": 3,
+        "baseAttack": 2,
+        "baseHealth": 2,
+        "skill": [],
+        "ability": [],
+        "passive": ["ranged"]
+      },
+      "giabro": {
+        "name": "giabro",
+        "set": "core",
+        "mana": 4,
+        "baseAttack": 2,
+        "baseHealth": 5,
+        "skill": [
+          {
+            "name": "cleave",
+            "bonus": 1,
+            "text": "Deal [x] damage to the front row"
+          }
+        ],
+        "ability": [],
+        "passive": []
+      },
+      "dacolm": {
+        "name": "dacolm",
+        "set": "core",
+        "mana": 6,
+        "baseAttack": 6,
+        "baseHealth": 8,
+        "skill": [],
+        "ability": [
+          {
+            "name": "fortify",
+            "bonus": 1,
+            "text": "Add [x] to health to units on this row"
+          }
+        ],
+        "passive": []
+      }
+    },
+    "sea": {
+      "requ": {
+        "name": "requ",
+        "set": "core",
+        "mana": 1,
+        "baseAttack": 1,
+        "baseHealth": 1,
+        "skill": [],
+        "ability": [
+          {
+            "name": "deathrattle",
+            "bonus": 1,
+            "text": "When this creature dies, draw a card"
+          }
+        ],
+        "passive": []
+      },
+      "marme": {
+        "name": "marme",
+        "set": "core",
+        "mana": 3,
+        "baseAttack": 2,
+        "baseHealth": 3,
+        "skill": [
+          {
+            "name": "medic",
+            "bonus": 3,
+            "text": "Heal target [x] health"
+          }
+        ],
+        "ability": [],
+        "passive": []
+      },
+      "zamilpen": {
+        "name": "zamilpen",
+        "set": "core",
+        "mana": 4,
+        "baseAttack": 4,
+        "baseHealth": 3,
+        "skill": [
+          {
+            "name": "freeze",
+            "bonus": 1,
+            "text": "Target cannot act for [x] turn"
+          }
+        ],
+        "ability": [],
+        "passive": []
+      },
+      "tarbyss": {
+        "name": "tarbyss",
+        "set": "core",
+        "mana": 5,
+        "baseAttack": 3,
+        "baseHealth": 3,
+        "skill": [],
+        "ability": [],
+        "passive": ["ranged"]
+      },
+      "neptjuno": {
+        "name": "neptjuno",
+        "set": "core",
+        "mana": 7,
+        "baseAttack": 5,
+        "baseHealth": 7,
+        "skill": [
+          {
+            "name": "fireball",
+            "bonus": 2,
+            "text": "Deal [x] damage to target"
+          }
+        ],
+        "ability": [
+          {
+            "name": "guard",
+            "bonus": 1,
+            "text": "Defend adjacent units"
+          }
+        ],
+        "passive": []
+      }
+    },
+    "hell": {
+      "hepetus": {
+        "name": "hepetus",
+        "set": "core",
+        "mana": 2,
+        "baseAttack": 2,
+        "baseHealth": 2,
+        "skill": [],
+        "ability": [],
+        "passive": []
+      },
+      "dullmadalla": {
+        "name": "dullmadalla",
+        "set": "core",
+        "mana": 3,
+        "baseAttack": 1,
+        "baseHealth": 3,
+        "skill": [
+          {
+            "name": "cleave",
+            "bonus": 1,
+            "text": "Deal [x] damage to the front row"
+          }
+        ],
+        "ability": [
+          {
+            "name": "bloodthirst",
+            "bonus": 1,
+            "text": "Gain [x] attack for each enemey killed"
+          }
+        ],
+        "passive": []
+      },
+      "blyx": {
+        "name": "blyx",
+        "set": "core",
+        "mana": 4,
+        "baseAttack": 3,
+        "baseHealth": 3,
+        "skill": [],
+        "ability": [],
+        "passive": ["ranged"]
+      },
+      "oonvievle": {
+        "name": "oonvievle",
+        "set": "core",
+        "mana": 6,
+        "baseAttack": 6,
+        "baseHealth": 5,
+        "skill": [],
+        "ability": [
+          {
+            "name": "bloodthirst",
+            "bonus": 1,
+            "text": "Gain [x] attack for each enemey killed"
+          }
+        ],
+        "passive": []
+      },
+      "greon": {
+        "name": "greon",
+        "set": "core",
+        "mana": 7,
+        "baseAttack": 5,
+        "baseHealth": 5,
+        "skill": [],
+        "ability": [
+          {
+            "name": "haste",
+            "bonus": 2,
+            "text": "Can attack on turn it is played"
+          }
+        ],
+        "passive": ["flying"]
+      }
+    },
+    "heaven": {
+      "pelitt": {
+        "name": "pelitt",
+        "set": "core",
+        "mana": 1,
+        "baseAttack": 1,
+        "baseHealth": 1,
+        "skill": [],
+        "ability": [
+          {
+            "name": "dispell",
+            "bonus": 1,
+            "text": "Remove harmful effects from freindly unit"
+          }
+        ],
+        "passive": ["flying"]
+      },
+      "guonefoss": {
+        "name": "guonefoss",
+        "set": "core",
+        "mana": 3,
+        "baseAttack": 2,
+        "baseHealth": 2,
+        "skill": [
+          {
+            "name": "fireball",
+            "bonus": 2,
+            "text": "Deal [x] damage to target"
+          }
+        ],
+        "ability": [],
+        "passive": ["flying"]
+      },
+      "kyriabell": {
+        "name": "kyriabell",
+        "set": "core",
+        "mana": 4,
+        "baseAttack": 4,
+        "baseHealth": 4,
+        "skill": [
+          {
+            "name": "cleave",
+            "bonus": 2,
+            "text": "Deal [x] damage to the front row"
+          }
+        ],
+        "ability": [],
+        "passive": ["flying"]
+      },
+      "fifenall": {
+        "name": "fifenall",
+        "set": "core",
+        "mana": 4,
+        "baseAttack": 1,
+        "baseHealth": 5,
+        "skill": [
+          {
+            "name": "medic",
+            "bonus": 6,
+            "text": "Heal [x] to target"
+          }
+        ],
+        "ability": [
+          {
+            "name": "deathrattle",
+            "bonus": 1,
+            "text": "When this creature dies, draw a card"
+          }
+        ],
+        "passive": ["flying"]
+      },
+      "amoltamis": {
+        "name": "oonvievle",
+        "set": "core",
+        "mana": 6,
+        "baseAttack": 3,
+        "baseHealth": 6,
+        "skill": [],
+        "ability": [
+          {
+            "name": "courage",
+            "bonus": 2,
+            "text": "Gain [x] attack while in front row"
+          }
+        ],
+        "passive": ["flying", "ranged"]
+      }
+    }
+  }
+}

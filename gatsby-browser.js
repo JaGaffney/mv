@@ -1,7 +1,6 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import "./src/styles/index.scss"
 
-// You can delete this file if you're not using it
+import "./src/styles/card.scss"
+import "./src/styles/deck.scss"
+import "./src/styles/heroicons.scss"
+import "./src/styles/generics.scss"
