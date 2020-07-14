@@ -9,6 +9,8 @@ import {
   GiBlackKnightHelm,
   GiDominoMask,
   GiAnvil,
+  GiMagicLamp,
+  GiCrabClaw,
 } from "react-icons/gi"
 
 const Card = props => {
@@ -20,10 +22,13 @@ const Card = props => {
       }
       let name = type[0]["name"]
       let bonus = type[0]["bonus"]
-      let text = type[0]["text"].replace("[x]", bonus)
+      let text = type[0]["text"]
+        .replace("[x]", bonus)
+        .replace("[x]", bonus)
+        .replace("[x]", bonus)
       return (
         <>
-          <span className="card-text-top">{name} </span>
+          {name && <span className="card-text-top">{name}</span>}
 
           <span className="card-text-bottom">
             {mana}
@@ -55,6 +60,18 @@ const Card = props => {
   }
 
   const passiveType = type => {
+    if (
+      typeof type === "undefined" ||
+      typeof type === undefined ||
+      type === "" ||
+      type === null
+    ) {
+      return null
+    }
+
+    if (type.length < 0) {
+      return null
+    }
     if (type.length > 1) {
       return (
         <>
@@ -71,7 +88,7 @@ const Card = props => {
     }
   }
 
-  const heroCard = type => {
+  const heroIcon = type => {
     switch (type) {
       case "duelist":
         return (
@@ -129,6 +146,20 @@ const Card = props => {
             </span>
           </>
         )
+      case "spell":
+        return (
+          <span className="card__hero-icon">
+            <GiMagicLamp size={"0.8em"} />
+          </span>
+        )
+      case "sea":
+        return (
+          <span className="card__hero-icon">
+            <GiCrabClaw size={"0.8em"} />
+          </span>
+        )
+      default:
+        return
     }
   }
 
@@ -136,22 +167,36 @@ const Card = props => {
     event.dataTransfer.setData("text/plain", event.target.id)
   }
 
+  console.log(props.type)
   return (
     <div
       className={`card set-${props.set} card-type-${props.type} hero__icon-temple`}
       draggable="true"
+      role="presentation"
       id={`cardName-${props.type}-${props.name}`}
       onDragStart={e => onDragStart(e)}
     >
       <span className="card__image"></span>
-      {props.type === "hero" ? heroCard(props.name) : null}
+
+      {heroIcon(props.name)}
       <span className="card__name">{props.name}</span>
       <span className="card__mana mana">{props.mana}</span>
-      <span className="card__attack">{props.baseAttack}</span>
-      <span className="card__health">{props.baseHealth}</span>
-      <span className="card__skills">{cardText(props.skill)}</span>
-      <span className="card__ability">{cardText(props.ability)}</span>
-      {props.passive.length > 0 ? passiveType(props.passive) : null}
+      {props.baseAttack && (
+        <span className="card__attack">{props.baseAttack}</span>
+      )}
+      {props.baseHealth && (
+        <span className="card__health">{props.baseHealth}</span>
+      )}
+      {props.effect && (
+        <span className="card__effect">{cardText(props.effect)}</span>
+      )}
+      {props.skill && (
+        <span className="card__skills">{cardText(props.skill)}</span>
+      )}
+      {props.ability && (
+        <span className="card__ability">{cardText(props.ability)}</span>
+      )}
+      {props.passive !== null ? passiveType(props.passive) : null}
     </div>
   )
 }

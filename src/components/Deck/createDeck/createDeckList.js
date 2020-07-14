@@ -5,34 +5,8 @@ const DeckList = props => {
   const [cardTotal, setCardTotal] = useState(0)
   const [componentHover, setComponentHover] = useState(false)
 
-  const dragOver = e => {
-    e.preventDefault()
-    // console.log("got here dragOver")
-  }
-
-  const dragEnter = e => {
-    e.preventDefault()
-    setComponentHover(true)
-  }
-
-  const dragLeave = e => {
-    e.preventDefault()
-    setComponentHover(false)
-  }
-
-  const cardDrop = e => {
-    e.preventDefault()
-    const cardName = e.dataTransfer
-      .getData("text")
-      .replace("cardName-", "")
-      .split("-")
-    addNewCards(cardName)
-    setComponentHover(false)
-  }
-
   const addNewCards = cardName => {
     const name = cardName[1]
-    console.log(cardName[0])
     if (cardName[0] === "hero") {
       // init hero creation
       if (deck["hero"] === "") {
@@ -48,6 +22,29 @@ const DeckList = props => {
     }
   }
 
+  // event handlers
+  const dragOver = e => {
+    e.preventDefault()
+  }
+  const dragEnter = e => {
+    e.preventDefault()
+    setComponentHover(true)
+  }
+  const dragLeave = e => {
+    e.preventDefault()
+    setComponentHover(false)
+  }
+  const cardDrop = e => {
+    e.preventDefault()
+    const cardName = e.dataTransfer
+      .getData("text")
+      .replace("cardName-", "")
+      .split("-")
+    addNewCards(cardName)
+    setComponentHover(false)
+  }
+
+  // button handlers
   const addCardHandler = cardName => {
     if (deck["cards"][cardName] < 3) {
       let totalCards = deck["cards"][cardName] + 1
@@ -55,7 +52,6 @@ const DeckList = props => {
       setCardTotal(cardTotal + 1)
     }
   }
-
   const removeCardHandler = cardName => {
     if (deck["cards"][cardName] > 0) {
       let totalCards = deck["cards"][cardName] - 1
@@ -70,7 +66,28 @@ const DeckList = props => {
       }
     }
   }
+  const resetHandler = () => {
+    setDeck({ hero: "", cards: [] })
+    setCardTotal(0)
+  }
 
+  const saveDeck = () => {
+    if (cardTotal !== 20) {
+      return
+    }
+    if (deck["hero"] === "") {
+      return
+    }
+    // save to local storage
+    // temp
+    localStorage.setItem("createdDeck", JSON.stringify(deck))
+    console.log(
+      "retrievedObject: ",
+      JSON.parse(localStorage.getItem("createdDeck"))
+    )
+  }
+
+  // ui components
   const cardComponent = cardName => {
     return (
       <div className="deck-drop-zone-card">
@@ -93,20 +110,20 @@ const DeckList = props => {
       </div>
     )
   }
-
   const makeCardsPopup = () => {
-    return <h1>too many cards of that type already in the deck</h1>
+    return <div>too many cards of that type already in the deck</div>
   }
 
   return (
     <div className="deck-card-list">
       <div>
-        <button>Save</button>
-        <button>Reset</button>
+        <button onClick={() => saveDeck()}>Save</button>
+        <button onClick={() => resetHandler()}>Reset</button>
         {cardTotal}/20
       </div>
       <div
         className={`deck-drop-zone ${componentHover && "deck-drop-zone-hover"}`}
+        role="presentation"
         onDragOver={dragOver}
         onDragEnter={dragEnter}
         onDragLeave={dragLeave}

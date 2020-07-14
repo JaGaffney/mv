@@ -87,6 +87,7 @@
   background: var(--purple700);
   color: var(--purple200);
   border: solid 4px var(--purple900);
+  margin: 15px 5px !important;
 }
 .card__attack {
   z-index: 10;
@@ -159,6 +160,22 @@
   display: flex;
   flex-wrap: wrap;
 }
+.card__effect {
+  grid-row: 6 / 10;
+  grid-column: 1 / -1;
+  margin: 0 0.4rem;
+  padding: 0 0.4rem;
+  font-size: 0.9rem;
+  background: var(--gray200);
+  color: var(--gray800);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: solid 4px var(--gray700);
+  display: flex;
+  flex-wrap: wrap;
+}
 .card-text-top {
   text-align: center;
   text-transform: capitalize;
@@ -168,9 +185,9 @@
   height: 0.8rem;
 }
 .card-text-bottom {
-  font-size: 0.7rem;
   line-height: 1.3;
   display: flex;
+  align-items: center;
 }
 .card__passive-ranged {
   grid-row: 3;

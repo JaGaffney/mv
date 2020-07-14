@@ -126,13 +126,81 @@
   },
   "spell": {
     "crystal": {
-      "name:": "crystal",
+      "name": "crystal",
       "mana": 0,
-      "effect": {
-        "name": "ramp",
-        "bonus": 1,
-        "text": "Gain [x] mana and creature gains +[x] +[x]"
-      }
+      "set": "core",
+      "effect": [
+        {
+          "bonus": 1,
+          "text": "Gain [x] mana and creature gains +[x] +[x]"
+        }
+      ]
+    },
+    "divineProtection": {
+      "name": "divine protection",
+      "mana": 1,
+      "set": "core",
+      "effect": [
+        {
+          "bonus": 1,
+          "text": "Target gains [x] health and is dispelled"
+        }
+      ]
+    },
+    "transmute": {
+      "name": "transmute",
+      "mana": 3,
+      "set": "core",
+      "effect": [
+        {
+          "bonus": 1,
+          "text": "Freeze target for [x] turns"
+        }
+      ]
+    },
+    "vanish": {
+      "name": "vanish",
+      "mana": 4,
+      "set": "core",
+      "effect": [
+        {
+          "bonus": 6,
+          "text": "Deal [x] damage"
+        }
+      ]
+    },
+    "uptide": {
+      "name": "uptide",
+      "mana": 3,
+      "set": "core",
+      "effect": [
+        {
+          "bonus": 1,
+          "text": "Sea cards gain +[x] +[x] and all others take [x] damage"
+        }
+      ]
+    },
+    "blaze": {
+      "name": "blaze",
+      "mana": 2,
+      "set": "core",
+      "effect": [
+        {
+          "bonus": 2,
+          "text": "Creature gains +[x] +[x] if it's hell gain an extra attack"
+        }
+      ]
+    },
+    "wall": {
+      "name": "wall",
+      "mana": 2,
+      "set": "core",
+      "effect": [
+        {
+          "bonus": 1,
+          "text": "Target is immune for 1 turn"
+        }
+      ]
     }
   },
   "creature": {
@@ -448,7 +516,7 @@
         "passive": ["flying"]
       },
       "amoltamis": {
-        "name": "oonvievle",
+        "name": "amoltamis",
         "set": "core",
         "mana": 6,
         "baseAttack": 3,

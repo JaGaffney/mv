@@ -1,13 +1,13 @@
 import React from "react"
 
-import DeckList from "./deckList"
+import DeckList from "./createDeckList"
 
-import Card from "../Cards/card"
+import Card from "../../Cards/card"
 
-let data = require("../../data/cards.json")
+let data = require("../../../data/cards.json")
 
-const Deck = () => {
-  let creatueType = Object.keys(data["creature"])
+const CreateDeck = () => {
+  const creatueType = Object.keys(data["creature"])
 
   return (
     <div className="deck-container">
@@ -36,6 +36,24 @@ const Deck = () => {
                 skill={skill}
                 ability={ability}
                 passive={passive}
+              />
+            </div>
+          )
+        })}
+        {/* spell cards */}
+        {Object.keys(data["spell"]).map((item, id) => {
+          let name = data["spell"][item]["name"]
+          let mana = data["spell"][item]["mana"]
+          let set = data["spell"][item]["set"]
+          let effect = data["spell"][item]["effect"]
+          return (
+            <div key={id}>
+              <Card
+                type={"spell"}
+                name={name}
+                mana={mana}
+                set={set}
+                effect={effect}
               />
             </div>
           )
@@ -76,4 +94,4 @@ const Deck = () => {
     </div>
   )
 }
-export default Deck
+export default CreateDeck
