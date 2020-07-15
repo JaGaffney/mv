@@ -136,8 +136,8 @@
         }
       ]
     },
-    "divineProtection": {
-      "name": "divine protection",
+    "protection": {
+      "name": "protection",
       "mana": 1,
       "set": "core",
       "effect": [

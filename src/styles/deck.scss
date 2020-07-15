@@ -6,10 +6,10 @@
 }
 
 .deck-all-cards {
-  width: 85%;
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   background: var(--gray500);
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;

@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 
 const DeckList = props => {
-  const [deck, setDeck] = useState({ hero: "", cards: [] })
+  const [deck, setDeck] = useState({ name: "", hero: "", cards: [] })
   const [cardTotal, setCardTotal] = useState(0)
   const [componentHover, setComponentHover] = useState(false)
+  const [deckName, setDeckName] = useState("")
 
   const addNewCards = cardName => {
     const name = cardName[1]
@@ -67,8 +68,9 @@ const DeckList = props => {
     }
   }
   const resetHandler = () => {
-    setDeck({ hero: "", cards: [] })
+    setDeck({ hero: "", cards: [], name: "" })
     setCardTotal(0)
+    setDeckName("")
   }
 
   const saveDeck = () => {
@@ -81,10 +83,10 @@ const DeckList = props => {
     // save to local storage
     // temp
     localStorage.setItem("createdDeck", JSON.stringify(deck))
-    console.log(
-      "retrievedObject: ",
-      JSON.parse(localStorage.getItem("createdDeck"))
-    )
+    // console.log(
+    //   "retrievedObject: ",
+    //   JSON.parse(localStorage.getItem("createdDeck"))
+    // )
   }
 
   // ui components
@@ -120,6 +122,19 @@ const DeckList = props => {
         <button onClick={() => saveDeck()}>Save</button>
         <button onClick={() => resetHandler()}>Reset</button>
         {cardTotal}/20
+      </div>
+      <div>
+        <form>
+          <input
+            id="deckName"
+            type="text"
+            value={deckName}
+            onChange={e => {
+              setDeck({ ...deck, name: e.target.value })
+              setDeckName(e.target.value)
+            }}
+          />
+        </form>
       </div>
       <div
         className={`deck-drop-zone ${componentHover && "deck-drop-zone-hover"}`}

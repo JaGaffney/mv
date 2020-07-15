@@ -10,7 +10,10 @@ import {
   GiDominoMask,
   GiAnvil,
   GiMagicLamp,
-  GiCrabClaw,
+  GiAtSea,
+  GiFruitTree,
+  GiFluffyCloud,
+  GiEvilFork,
 } from "react-icons/gi"
 
 const Card = props => {
@@ -88,8 +91,8 @@ const Card = props => {
     }
   }
 
-  const heroIcon = type => {
-    switch (type) {
+  const heroIcon = (name, type) => {
+    switch (name) {
       case "duelist":
         return (
           <>
@@ -146,16 +149,39 @@ const Card = props => {
             </span>
           </>
         )
+      default:
+        break
+    }
+
+    switch (type) {
       case "spell":
         return (
           <span className="card__hero-icon">
             <GiMagicLamp size={"0.8em"} />
           </span>
         )
+      case "earth":
+        return (
+          <span className="card__hero-icon">
+            <GiFruitTree size={"0.8em"} />
+          </span>
+        )
       case "sea":
         return (
           <span className="card__hero-icon">
-            <GiCrabClaw size={"0.8em"} />
+            <GiAtSea size={"0.8em"} />
+          </span>
+        )
+      case "hell":
+        return (
+          <span className="card__hero-icon card__hero-icon-hell">
+            <GiEvilFork size={"0.8em"} />
+          </span>
+        )
+      case "heaven":
+        return (
+          <span className="card__hero-icon">
+            <GiFluffyCloud size={"0.8em"} />
           </span>
         )
       default:
@@ -167,7 +193,6 @@ const Card = props => {
     event.dataTransfer.setData("text/plain", event.target.id)
   }
 
-  console.log(props.type)
   return (
     <div
       className={`card set-${props.set} card-type-${props.type} hero__icon-temple`}
@@ -178,7 +203,7 @@ const Card = props => {
     >
       <span className="card__image"></span>
 
-      {heroIcon(props.name)}
+      {heroIcon(props.name, props.type)}
       <span className="card__name">{props.name}</span>
       <span className="card__mana mana">{props.mana}</span>
       {props.baseAttack && (
