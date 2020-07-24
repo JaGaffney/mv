@@ -118,12 +118,8 @@ const DeckList = props => {
 
   return (
     <div className="deck-card-list">
-      <div>
-        <button onClick={() => saveDeck()}>Save</button>
-        <button onClick={() => resetHandler()}>Reset</button>
-        {cardTotal}/20
-      </div>
-      <div>
+      <div className="deck-card-form">
+        <span>{cardTotal}/20</span>
         <form>
           <input
             id="deckName"
@@ -133,8 +129,17 @@ const DeckList = props => {
               setDeck({ ...deck, name: e.target.value })
               setDeckName(e.target.value)
             }}
+            placeholder="Deck name"
           />
         </form>
+      </div>
+      <div className="deck-card-buttons">
+        <button className="btn btn-primary" onClick={() => saveDeck()}>
+          Save
+        </button>
+        <button className="btn btn-secondary" onClick={() => resetHandler()}>
+          Reset
+        </button>
       </div>
       <div
         className={`deck-drop-zone ${componentHover && "deck-drop-zone-hover"}`}

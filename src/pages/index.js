@@ -13,8 +13,18 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <div>
-        <button onClick={() => setTempDeck(false)}>Play Game</button>
-        <button onClick={() => setTempDeck(true)}>Create Deck</button>
+        <button
+          className="btn btn-primary btn-large"
+          onClick={() => setTempDeck(false)}
+        >
+          Play Game
+        </button>
+        <button
+          className="btn btn-primary btn-large"
+          onClick={() => setTempDeck(true)}
+        >
+          Create Deck
+        </button>
       </div>
       {tempDeck ? <CreateDeck /> : <DeckDisplay />}
     </Layout>

@@ -132,7 +132,7 @@
       "effect": [
         {
           "bonus": 1,
-          "text": "Gain [x] mana and creature gains +[x] +[x]"
+          "text": "Gain [x] mana and target creature gains +[x] +[x]"
         }
       ]
     },

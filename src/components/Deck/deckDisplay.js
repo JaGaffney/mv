@@ -66,7 +66,7 @@ const DeckDisplay = () => {
     <div>
       <h1>Display current decks</h1>
 
-      <h3>custom decks</h3>
+      <h3>Custom decks</h3>
       {/* {Object.keys(customDeck).map((item, index) => {
         if (preMadeDecks[item]) {
           return <p key={index}>{preMadeDecks[item]}</p>
