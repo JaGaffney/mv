@@ -47,6 +47,7 @@
     background: var(--blue200);
     border-radius: 50%;
     box-shadow: var(--shadow500);
+    z-index: 50;
     &:hover {
       color: var(--blue200);
       background: var(--blue700);

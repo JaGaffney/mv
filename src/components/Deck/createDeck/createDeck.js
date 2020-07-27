@@ -68,7 +68,7 @@ const CreateDeck = props => {
               )
             })}
 
-            {/* creatue cards */}
+            {/* creatuer cards */}
             {creatueType.map(type =>
               Object.keys(data["creature"][type]).map((item, id) => {
                 let name = data["creature"][type][item]["name"]
