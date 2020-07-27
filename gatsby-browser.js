@@ -1,5 +1,6 @@
 import "./src/styles/index.scss"
-
+import "./src/styles/layout.scss"
+import "./src/styles/home.scss"
 import "./src/styles/card.scss"
 import "./src/styles/deck.scss"
 import "./src/styles/heroicons.scss"

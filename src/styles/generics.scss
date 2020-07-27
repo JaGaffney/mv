@@ -39,9 +39,18 @@
     background: var(--gray700);
   }
 }
+.btn-disabled {
+  border: solid 3px var(--red700);
+  color: var(--red800);
+  background: var(--red200);
+  cursor: not-allowed;
+}
 .btn-large {
   border-radius: 5px;
   font-size: 1.2rem;
-  height: 2rem;
-  width: 12rem;
+  height: 3.5rem;
+  width: 20rem;
+  margin: 0.3rem 0;
+  box-shadow: var(--shadow500);
+  letter-spacing: 3px;
 }

@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 
-const DeckDisplay = () => {
+import HomeButton from "../Home/HomeButton"
+
+const DeckDisplay = props => {
   const [customDeck, setCustomDeck] = useState(
     JSON.parse(localStorage.getItem("createdDeck"))
   )
@@ -64,6 +66,7 @@ const DeckDisplay = () => {
 
   return (
     <div>
+      <HomeButton onOptionHandler={props.onOptionHandler} />
       <h1>Display current decks</h1>
 
       <h3>Custom decks</h3>
